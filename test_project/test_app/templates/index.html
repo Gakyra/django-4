@@ -1,0 +1,12 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+    {% for post in posts %}
+        <p>{{ post.user_info }}</p>
+        <p>{{ post.title }} <a href="{% url 'post-detail' post.id %}">Details</a></p>
+    {% endfor %}
+{% endblock %}
+
+
+{{ user.first_name }} {{ user.last_name }}
+{{ user.full_name }}

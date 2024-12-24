@@ -1,0 +1,15 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+    <p>{{ post.user.username }}</p>
+    <h3>{{ post.title }}</h3>
+
+    <form method="post" action="{% url 'post-comment-add' post.id %}">
+        {{ csrf_token }}
+        {{ form }}
+        <input type="submit">
+    </form>
+    {% for comment in post.comments.all %}
+        <p>{{ comment.text }}</p>
+    {% endfor %}
+{% endblock %}

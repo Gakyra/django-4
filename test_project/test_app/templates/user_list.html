@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h1>Users with Free Subscription</h1>
+    <ul>
+        {% for user in free_users %}
+            <li>{{ user.full_name }}</li>
+        {% endfor %}
+    </ul>
+
+    <h1>Users with Advanced Subscription</h1>
+    <ul>
+        {% for user in advanced_users %}
+            <li>{{ user.full_name }}</li>
+        {% endfor %}
+    </ul>
+
+    <h1>Users with Pro Subscription</h1>
+    <ul>
+        {% for user in pro_users %}
+            <li>{{ user.full_name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
